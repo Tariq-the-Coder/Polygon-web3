@@ -364,13 +364,12 @@ async function transferEth(_to, _amount, network) {
     }
     console.log(options.to);
     let r = await web3.eth.sendTransaction(options)
-    .then((receipt) => {
+    .on('receipt', (receipt) => {
         console.log('transfer successful!', receipt.transactionHash)
-      })
-      .catch((error) => {
-        console.error(`${error}`);
-      });
-
+    })
+    .on('error', (err) => {
+        return Promise.reject(err);
+    })
     console.log('---end tx---')
     return Promise.resolve(r.transactionHash);
 }
