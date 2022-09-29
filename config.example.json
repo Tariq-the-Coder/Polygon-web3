@@ -1,0 +1,17 @@
+{
+    "checkfreqinsec": 10,
+    "greylistdurationinsec": 86400,
+    "claimintervalinsec": 86400,
+    "networks": {
+        "rpc-mainnet": {
+            "rpc": "https://polygon-rpc.com",
+            "explorer": "https://polygonscan.com",
+            "tokens": {
+                "matic": {
+                    "payoutamount": 0.0007,
+                    "maxbalance": 1000000000000000
+                }
+            }
+        }
+    }
+}
