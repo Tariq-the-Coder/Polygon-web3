@@ -359,7 +359,7 @@ async function transferEth(_to, _amount, network) {
         from: _from,
         to: _to,
         value: amt,
-        gas: 30000,
+        gas: 45000,
         gasPrice: _gasPrice
     }
     console.log(options.to);
@@ -377,9 +377,9 @@ async function transferEth(_to, _amount, network) {
 // Database Connect & Server Litsen 
 mongoose.connect(process.env.MONGODB_URI, {
 
-            serverSelectionTimeoutMS: 50000, // Defaults to 30000 (30 seconds)
-            connectTimeoutMS:50000,
-            socketTimeoutMS:50000,
+            serverSelectionTimeoutMS: 60000, // Defaults to 30000 (30 seconds)
+            connectTimeoutMS:60000,
+            socketTimeoutMS:60000,
             useNewUrlParser: true,
             useUnifiedTopology: true,
   })
