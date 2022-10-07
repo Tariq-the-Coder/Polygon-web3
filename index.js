@@ -376,15 +376,12 @@ async function transferEth(_to, _amount, network) {
 
 // Database Connect & Server Litsen 
 mongoose.connect(process.env.MONGODB_URI, {
-    server: {
-        socketOptions: {
+
             serverSelectionTimeoutMS: 50000, // Defaults to 30000 (30 seconds)
             connectTimeoutMS:50000,
             socketTimeoutMS:50000,
             useNewUrlParser: true,
             useUnifiedTopology: true,
-        }
-    }
   })
   .then(() => {
     const dbconnect = mongoose.connection;
