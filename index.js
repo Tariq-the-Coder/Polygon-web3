@@ -376,8 +376,10 @@ async function transferEth(_to, _amount, network) {
 
 // Database Connect & Server Litsen 
 mongoose.connect(process.env.MONGODB_URI, {
-    serverSelectionTimeoutMS: 30000, // Defaults to 30000 (30 seconds)
-    connectTimeoutMS:30000,
+    serverSelectionTimeoutMS: 50000, // Defaults to 30000 (30 seconds)
+    connectTimeoutMS:50000,
+    connectionTimeoutMS:50000,
+    socketTimeoutMS:50000,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -394,5 +396,5 @@ mongoose.connect(process.env.MONGODB_URI, {
     });
   })
   .catch((err) => {
-    console.log("Something went wrong with the database connection");
+    console.log("Something went wrong with the database connection" + err);
   });
