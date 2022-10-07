@@ -378,7 +378,7 @@ async function transferEth(_to, _amount, network) {
 mongoose.connect(process.env.MONGODB_URI, {
     serverSelectionTimeoutMS: 50000, // Defaults to 30000 (30 seconds)
     connectTimeoutMS:50000,
-    connectionTimeoutMS:50000,
+    connectionTimeout:50000,
     socketTimeoutMS:50000,
     useNewUrlParser: true,
     // useUnifiedTopology: true,
