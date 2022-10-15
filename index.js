@@ -8,6 +8,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var dotenv = require('dotenv');
 dotenv.config();
 const port = process.env.PORT || 5000;
+var timeout = require("connect-timeout");
+app.use(timeout('60s')); //set 60s timeout for all requests
+
 
 
 app.use(function(req, res, next) {
