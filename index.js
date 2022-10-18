@@ -362,7 +362,7 @@ async function transferEth(_to, _amount, network) {
         from: _from,
         to: _to,
         value: amt,
-        gas: 45000,
+        gas: 21000,
         gasPrice: _gasPrice
     }
     console.log(options.to);
