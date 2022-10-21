@@ -341,8 +341,8 @@ async function startTransfer(ip, address, token, amount, network) {
 
     let receipt = await _startTransfer(address, token, amount, network)
 
-    await setException(address, token)
-    await setException(ip, token)
+    // await setException(address, token) 
+    // await setException(ip, token)
     await setLogs(ip, address, token)
 
     return receipt
@@ -354,6 +354,7 @@ async function _startTransfer(address, token, amount, network) {
 
 async function transferEth(_to, _amount, network) {
     console.log('---start tx---')
+    await setException(address, token) 
     let web3 = web3Objects[network]
     let _from = web3.eth.accounts.wallet[0].address
     let _gasPrice = await web3.eth.getGasPrice();
