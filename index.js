@@ -342,7 +342,7 @@ async function startTransfer(ip, address, token, amount, network) {
     let receipt = await _startTransfer(address, token, amount, network)
 
     // await setException(address, token) 
-    // await setException(ip, token)
+    await setException(ip, token)
     await setLogs(ip, address, token)
 
     return receipt
